@@ -29,7 +29,7 @@ var os = require('os'),
   },
   unzip = function (targetPath) {
     'use strict';
-    return cp.exec('cat ' + path.join(__dirname, 'vendor', 'ffmpeg.gz') + ' | gzip -d  > ' + targetPath).then(function () {
+    return cp.exec('cp ' + path.join(__dirname, 'vendor', 'ffmpeg') + ' ' + targetPath).then(function () {
       return makeExecutable(targetPath);
     });
   },
